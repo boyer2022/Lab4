@@ -11,11 +11,14 @@ def discount(item_prices):
     """
     try:
         number_of_items = len(item_prices)
+        # If the number of items is greater than 3- loop runs. Loop get the smallest number in the list.
         if number_of_items >= 3:
             min_num = min(item_prices)
+            # Check for less than 0 numbers
             if min_num < 0:
                 raise ValueError('There are negative numbers, please try again')
             return min_num
+            # If items are less than 3 no discount applied. None is returned to the call
         return None
     except TypeError:
         return None

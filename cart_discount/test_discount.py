@@ -1,29 +1,36 @@
+# Original code from Clara James
+# Code designed by Marty Mooney
 import unittest 
 from unittest import TestCase
 from price_discount import discount  
 
 class TestDiscount(TestCase):
-
+      
+# Test for 3 items, lowest number is discounted
     def test_list_of_three_prices(self):
         prices = [10, 4, 20]
         expected_discount = 4
         self.assertEqual(expected_discount, discount(prices))
 
+# Test for a higher number of items
     def test_list_of_seven_prices(self):
         prices = [54, 53, 94, 76, 27, 56, 91]
         expected_discount = 27
         self.assertEqual(expected_discount, discount(prices))
 
+# Test for minimum number of items
     def test_list_of_two_prices(self):
         prices = [10,20]
         expected_discount = None
         self.assertEqual(expected_discount, discount(prices))
 
+# Test for large number of items
     def test_list_of_twenty_prices(self):
         prices = [472, 712, 502, 382, 216, 968, 574, 22, 200, 367, 148, 942, 171, 745, 798, 571, 231, 651, 541, 801]
         expected_discount = 22
         self.assertEqual(expected_discount, discount(prices))
 
+# Test for string item in list
     def test_string_list(self):
         items = ['test', 'string', 'lists']
         expected_discount = None
@@ -36,7 +43,7 @@ class TestDiscount(TestCase):
         returned_value = discount(items)
         self.assertEqual(expected_discount, returned_value)
     
-    # TODO more unit tests here. Each test should test one scenario
+    # more unit tests here. Each test should test one scenario
 
 
 if __name__ == '__main__':

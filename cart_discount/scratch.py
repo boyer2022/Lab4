@@ -1,8 +1,11 @@
 import random
+# setting length of list
 length_of_list = 5
 list_to_use = []
+
 max_number = 1000
 min_number = 2
+# Randomly fill list with numbers from 2-1000 with length of list
 for i in range(length_of_list):
     random_num = random.randint(min_number, max_number)
     list_to_use.append(random_num)
